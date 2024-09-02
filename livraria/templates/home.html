@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Livraria{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/search.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+{% endblock %}
+
+{% block conteudo %}
+<section class="container">
+    <form action="" method="post">
+        <div class="search-container">
+            <label class="search-icon" for="search-input"></label>
+            <input
+                type="text"
+                name="search-input"
+                class="search-input"
+                id="search-input"
+                placeholder="Procurar livros"
+            />
+        </div>
+    </form>
+    <div class="content-cards">
+        {% for livro in livros %}
+        <div class="card">
+            <a href="{{ url_for('livro_detail', livro_id=livro.id) }}">
+                <img src="{{ url_for('uploaded_file', filename=livro.image_file) }}" class="card-img-top"
+                    alt="{{ livro.title }}">
+            </a>
+            <div class="card-body">
+                <h5 class="card-title">{{ livro.title }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+    </div>    
+</section>
+{% endblock %}

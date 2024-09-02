@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/livro.css') }}">
+{% endblock %}
+
+{% block conteudo %}
+<div class="livro-detail-container">
+    <div class="livro-image">
+        <img src="{{ url_for('uploaded_file', filename=livro.image_file) }}" alt="{{ livro.title }}">
+    </div>
+    <div class="livro-info">
+        <form action="{{ url_for('livro_detail', livro_id=livro.id) }}" method="post" enctype="multipart/form-data">
+            <!-- Campos do formulário -->
+            <div class="form-group">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" value="{{ livro.title }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="overview">Resumo:</label>
+                <textarea id="overview" name="overview" class="form-control">{{ livro.overview }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="author">Autor:</label>
+                <input type="text" id="author" name="author" value="{{ livro.author }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="pages">Número de páginas:</label>
+                <input type="number" id="pages" name="pages" value="{{ livro.pages }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="genre">Gênero:</label>
+                <input type="text" id="genre" name="genre" value="{{ livro.genre }}" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="capa">Capa</label>
+                <input type="file" id="capa" name="capa" accept=".jpg, .png" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}

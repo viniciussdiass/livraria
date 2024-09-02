@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block style %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+{% endblock %}
+
+{% block conteudo %}
+    <form method="POST" action="{{ url_for('cadastrar_user') }}">
+        <div class="main-login">
+            <div class="right-login">
+                <div class="card-login">
+                    <div class="textfield">
+                        <label for="usuario">Nome</label>
+                        <input type="text" name="nome" placeholder="nome">
+                    </div>
+                    <div class="textfield">
+                        <label for="usuario">Username</label>
+                        <input type="text" name="usuario" placeholder="username">
+                    </div>
+                    <div class="textfield">
+                        <label for="usuario">E-mail</label>
+                        <input type="email" name="email" placeholder="email">
+                    </div>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" placeholder="senha">
+                    </div>
+                    <button class="btn-login">Sign up</button>
+                    <p class="signin">Já tem conta? <a href="{{ url_for('login') }}">Sign in</a> </p>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

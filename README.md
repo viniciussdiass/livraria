@@ -17,7 +17,7 @@ Trata-se de uma aplicação web para visualizar informações de livros criado c
 
 ### Instalação e configuração
 Aqui está um resumo de como configurar o aplicativo:
-* **1º Passo** : Clone este repositório usando **`https://github.com/luizfernandoin/Livraria.git`**, ou baixando um arquivo ZIP do código.
+* **1º Passo** : Clone este repositório usando **`https://github.com/viniciussdiass/livraria.git`**, ou baixando um arquivo ZIP do código.
 * **2º Passo** : O repositório, se baixado como um arquivo .zip, precisará ser extraído para o local de sua preferência e aberto
 * **3º Passo** : Vá para o diretório raiz do projeto e instale a biblioteca venv usando pip e depois crie um ambiente virtual. Execute os seguintes comandos respectivamente:
     * **`pip install -m venv venv`**
@@ -35,7 +35,7 @@ Aqui está um resumo de como configurar o aplicativo:
 
 ## Desenvolvedores
 
-👤 **Luiz Fernando**
+👤 **Vinicius, Samira e Albevânia**
 
 ## Mostre seu apoio
 
